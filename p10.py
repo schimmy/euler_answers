@@ -38,3 +38,18 @@ def better_primes(n):
     return possible
 
 sum(better_primes(1000))
+
+
+# one from the clever edu thing:
+
+
+top_num = 10
+primes = []
+cand_list = range(2, top_num)
+while len(cand_list) > 0:
+    i = cand_list[0]
+    cand_list = cand_list[1:]
+    primes.append(i)
+    cand_list = [c for c in cand_list if c % i != 0]
+
+print sum(primes)
